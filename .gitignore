@@ -1,1 +1,25 @@
+cat > .gitignore <<'EOF'
+# Python
 venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.DS_Store
+
+# Secrets / env
+.env
+*.env
+
+# Logs / caches
+*.log
+
+# Model + vector indexes (optional to exclude)
+vectorstore/
+*.onnx
+*.so
+*.dylib
+*.bin
+*.pt
+*.ckpt
+EOF
