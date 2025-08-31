@@ -80,3 +80,4 @@ Welcome to your AI-powered medical assistant! This chatbot uses **Retrieval-Augm
 ---
 
 *Built for clarity, powered by context. Your medical questions—answered with precision.*  
+# medical-chatbot-assistant
