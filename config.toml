@@ -1,0 +1,11 @@
+[project]
+name = "Medical Chatbot Assistant"
+description = "An AI-powered medical assistant using Retrieval-Augmented Generation (RAG) to answer health-related questions from embedded medical literature."
+author = "Your Name or Organization"
+version = "1.0.0"
+license = "MIT"
+
+[ui]
+default_input = "What are the symptoms of diabetes?"
+theme = "light"
+show_feedback_button = true
