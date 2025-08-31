@@ -1,14 +1,15 @@
-FROM python:3.10-slim
+FROM python:3.9
 
-# Install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN useradd -m -u 1000 user
+USER user
+ENV PATH="/home/user/.local/bin:$PATH"
 
-# Copy app
-COPY . .
+WORKDIR /app
 
-# Expose Chainlit’s default port
-EXPOSE 7860
+COPY --chown=user requirements.txt requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-# Run Chainlit app
-CMD ["chainlit", "run", "app.py", "-h", "0.0.0.0", "-p", "7860"]
+COPY --chown=user . /app
+
+# Chainlit entrypoint
+CMD ["python", "-m", "chainlit", "run", "app.py", "--host", "0.0.0.0", "--port", "7860"]
